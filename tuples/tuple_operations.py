@@ -1,5 +1,5 @@
 #Topic : Tuple
-## Operation -> Concatenation(+), Repetition(*), Membership(in, not in), Packing and Unpacking
+## Operation -> Concatenation(+), Repetition(*), Membership(in, not in), Packing and Unpacking, Comparison
 
 # 1) Concatenation(+)
 
@@ -47,3 +47,13 @@ print(a,b,c)                #op 1 2 [3, 4, 5]
 *a,b,c = t2
 print(a,b,c)                #op [1, 2, 3] 4 5
 
+# 6) Comparison operator
+
+t1 = (1,2,3)
+t2 = (1,2,3)
+t3 = (33,4,5)
+t4 = (5,)
+
+print(t1==t2)
+print(t3>t2)
+print(t4>t2)
