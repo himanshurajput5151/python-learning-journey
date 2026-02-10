@@ -26,3 +26,6 @@ print(t7)
 t8 = tuple({'g','e','b','a'})   ## set as iterable
 print(t8)
 
+
+t9 = 3,4,5,67,100           ##if multiple data is passed to single variable it is packed into tuple
+print(t9)
