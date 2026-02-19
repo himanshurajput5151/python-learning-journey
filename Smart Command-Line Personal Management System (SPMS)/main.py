@@ -20,11 +20,17 @@ while True:
         email = input("Enter your EmailId: ")
         password = input("Enter your Password: ")
         reg_result = auth_service.register_user(user_name,email,password)
-        print(reg_result)
+        view_by_dev_result, to_be_printed_result = reg_result
+        print(to_be_printed_result)
     elif choice == 2:
         print("\tSign in ")
         user_name = input("Enter UserName or EmailId : ")
         password = input("Enter your Password: ")
+        login_result = auth_service.login_user(user_name, password)
+        view_by_dev_result , to_be_printed_result = login_result
+        print(to_be_printed_result)
+        if view_by_dev_result :
+
 
     else:
         break

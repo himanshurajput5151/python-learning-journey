@@ -4,15 +4,15 @@ from models.user import User
 
 
 def register_user(username,email,password):
-    name_val =  validator.is_name_valid(username)
-    email_val = validator.is_email_valid(email)
-    password_val =  validator.is_password_valid(password)
+    is_name_val =  validator.is_name_valid(username)
+    is_email_val = validator.is_email_valid(email)
+    is_password_val =  validator.is_password_valid(password)
 
-    if not name_val:
+    if not is_name_val:
         return False, "Username not Valid."
-    if not email_val:
+    if not is_email_val:
         return False , "Email not Valid."
-    if not password_val :
+    if not is_password_val :
         return False , "Password not Valid."
 
 
@@ -31,6 +31,10 @@ def register_user(username,email,password):
     return True, "User Created Successfully"
 
 
-
-
-
+def login_user(username , password):
+    load_user_info = file_handler.read_json()
+    for item in load_user_info:
+        if (item['username'] == username) or (item['email'] == username) :
+            if item['password'] == password :
+                return True, "User Logged in successfully."
+    return False , "Username or Password is wrong."
