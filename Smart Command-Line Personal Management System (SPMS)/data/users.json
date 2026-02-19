@@ -1,7 +1,9 @@
 [
+
     {
-        "username": "Himanshu",
-        "email": "himanshu@gmail.com",
-        "password": "Himanshu@123"
+        "user_id": 1001,
+        "username": "Sujal",
+        "email": "sujal@tcs.com",
+        "password": "Sujal@123"
     }
 ]

@@ -1,0 +1,9 @@
+[
+    {
+        "user_id": 1001,
+        "expense_id": 101,
+        "title": "Electricity",
+        "amount": 1500,
+        "category": "Recharge"
+    }
+]

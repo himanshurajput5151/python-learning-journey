@@ -1,5 +1,5 @@
 
-from services import auth_service
+from services import auth_service,expense_service
 
 
 def menu():
@@ -7,8 +7,27 @@ def menu():
     print("2. Login ")
     print("3. Exit")
 
-import factory_work.validator
-print("Validator imported successfully")
+
+def dashboard(user_id):
+    print("Add Expense")
+    print("View Expense")
+    print("Delete Expense")
+    print("Logout")
+
+    expense_choice = int(input("Enter your option: "))
+    if expense_choice==1:
+        title_name = input("Enter Title: ")
+        amount_val = int(input("Enter amount: "))
+        category_name = input("Enter category: ")
+        expense_result = expense_service.add_expense(user_id, title_name, amount_val,category_name)
+        print(expense_result)
+    elif expense_choice ==2:
+        print()
+    elif expense_choice==3:
+        print()
+    else:
+        exit()
+
 
 
 while True:
@@ -27,11 +46,9 @@ while True:
         user_name = input("Enter UserName or EmailId : ")
         password = input("Enter your Password: ")
         login_result = auth_service.login_user(user_name, password)
-        view_by_dev_result , to_be_printed_result = login_result
+        view_by_dev_result , to_be_printed_result, user_id = login_result
         print(to_be_printed_result)
         if view_by_dev_result :
-
-
+            dashboard(user_id)
     else:
         break
-
