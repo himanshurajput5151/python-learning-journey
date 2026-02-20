@@ -8,23 +8,42 @@ def menu():
     print("3. Exit")
 
 
-def dashboard(user_id):
-    print("Add Expense")
-    print("View Expense")
-    print("Delete Expense")
-    print("Logout")
+def dashboard(user_dashboard_id):
+    print("1) Add Expense")
+    print("2) View Expense")
+    print("3) Delete Expense")
+    print("4) Logout")
 
     expense_choice = int(input("Enter your option: "))
     if expense_choice==1:
+        '''
+            to add expenses of user which is mapped to user.
+        '''
         title_name = input("Enter Title: ")
         amount_val = int(input("Enter amount: "))
         category_name = input("Enter category: ")
-        expense_result = expense_service.add_expense(user_id, title_name, amount_val,category_name)
-        print(expense_result)
+        expense_result_dev, expense_result_user = expense_service.add_expense(user_id, title_name, amount_val,category_name)
+        print(expense_result_user)
+        dashboard(user_dashboard_id)
     elif expense_choice ==2:
-        print()
+        '''
+            to view all expense of specific user by passing user_id
+        '''
+        view_expense_result = expense_service.view_all_expense(user_dashboard_id)
+        expense_dev_result, expense_list,expense_msg = view_expense_result
+        print(expense_msg)
+        print(expense_list)
+        dashboard(user_dashboard_id)
+
     elif expense_choice==3:
-        print()
+        '''
+            to delete expense of user using expense Id
+        '''
+        expense_id_from_user = input("Enter Expense Id: ")
+        expense_delete_result = expense_service.delete_expense_user(expense_id_from_user)
+        expense_delete_dev, user_delete_msg = expense_delete_result
+        print(user_delete_msg)
+        dashboard(user_dashboard_id)
     else:
         exit()
 

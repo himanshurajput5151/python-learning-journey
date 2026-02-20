@@ -1,12 +1,10 @@
-
+import uuid
 
 
 class Expense :
-    __is_expense_counter = 100
     def __init__(self,user_id,title,amount,category):
-        Expense.__is_expense_counter +=1
         self.user_id = user_id
-        self.expense_id = Expense.__is_expense_counter
+        self.expense_id = str(uuid.uuid4())
         self.title = title
         self.amount = amount
         self.category = category

@@ -22,7 +22,7 @@ def register_user(username,email,password):
     if not is_password_val :
         return False , "Password not Valid."
 
-    duplicate_checker = file_handler.read_json()
+    duplicate_checker = file_handler.user_read_json()
     for item in duplicate_checker:
         if item["username"] == username:
             return False, "UserName already Exist"
@@ -32,7 +32,7 @@ def register_user(username,email,password):
     user = User(username, email, password)
     user_dict = user.to_dict()
 
-    file_handler.append_json(user_dict)
+    file_handler.user_append_json(user_dict)
 
     return True, "User Created Successfully"
 
@@ -41,7 +41,7 @@ def register_user(username,email,password):
     1) it checks username and password are correct or not by help of file_handler module
 '''
 def login_user(username , password):
-    load_user_info = file_handler.read_json()
+    load_user_info = file_handler.user_read_json()
     for item in load_user_info:
         if (item['username'] == username) or (item['email'] == username) :
             if item['password'] == password :
