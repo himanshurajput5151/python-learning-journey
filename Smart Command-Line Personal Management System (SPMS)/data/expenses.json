@@ -1,1 +1,21 @@
-[]
+[
+    {
+        "user_id": "USER-60898",
+        "expense_id": "bc88226d-3dab-4994-8446-a90f6de60de4",
+        "public_expense_id": "EXP31180",
+        "category": "Food & Dining",
+        "amount": 500.00,
+        "currency": "INR",
+        "date": "2026-02-24",
+        "time": "14:05",
+        "merchant": "Shivsagar",
+        "city": "Mumbai",
+        "description": "\"had dinner with friends",
+        "tags": [
+            "dinner",
+            "fun",
+            "friends"
+        ],
+        "is_recurring": false
+    }
+]
