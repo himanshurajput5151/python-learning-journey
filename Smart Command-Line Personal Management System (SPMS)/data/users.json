@@ -1,14 +1,8 @@
 [
     {
-        "user_id": 1001,
-        "username": "Sujal",
-        "email": "sujal@tcs.com",
-        "password": "Sujal@123"
-    },
-    {
-        "user_id": 1005,
-        "username": "Himanshu",
-        "email": "himanshu@gmail.com",
+        "user_id": "USER-60898",
+        "username": "himanshu",
+        "email": "himanshu@tcs.com",
         "password": "Himanshu@123"
     }
 ]
